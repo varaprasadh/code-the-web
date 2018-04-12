@@ -22,8 +22,8 @@ body{
 	font-size: 50px;
 	font-weight: 50px;
 	font-family: sans-serif;
-    margin-bottom:20px;
-    animation: animate1 5s infinite;
+        margin-bottom:20px;
+        animation: animate1 5s infinite;
 }
 #text2{
 	font-size: 40px;
@@ -35,10 +35,9 @@ body{
 }
 @keyframes animate{
 	0%{
-		color:#fff;
-
+            color:#fff;
 	    transform: translate3d(0px,0px,0px);
-        transform: rotate3d(1,1,1,0deg);
+            transform: rotate3d(1,1,1,0deg);
 
 
 	}
@@ -50,26 +49,29 @@ body{
 	}
 }@keyframes animate1{
     0%{
-		color:#fff;
-        transform: translate3d(0px,0px,0px);
+	  color:#fff;
+          transform: translate3d(0px,0px,0px);
 	}
 	100%{
 		color: #000;
-	    transform: translate3d(-50px,-50px,50px);
+	        transform: translate3d(-50px,-50px,50px);
 	}
 }
 @keyframes animatepic{
 	0%{
 		background: url("i1.jpg");
+		background-repeat:none;
 		background: hsl(30,30,30);
 	}
 	50%{
 		background: url("i2.jpg");
+		background-repeat:none;
 	}
 
 	100%{
 		background: url("i3.jpg");
-	    background: hsl(100,30,130);
+		background-repeat:none;
+	        background: hsl(100,30,130);
 
 	}
 }
