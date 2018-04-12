@@ -8,6 +8,7 @@ body{
 	background:#22313F;
 	animation: animatepic 5s infinite;
 	background-size:cover;
+	background-repeat:none;
 
 }
 .container{
