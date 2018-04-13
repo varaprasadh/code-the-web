@@ -1,0 +1,47 @@
+<!doctype html>
+<!DOCTYPE html>
+<html>
+<head>
+	<title>people survey</title>
+	<link rel="stylesheet" type="text/css" href="firebase.css">
+</head>
+<body>
+	<div id=header>Welcome To People's Survey</div>
+  <div id="container">
+  	<div id="container">
+  	<div id="name">
+  		<div>enter your name</div>
+  		<textarea id="_name" placeholder="enter your name"></textarea>
+  	</div>
+  	<div id="number">
+  			<div>mobile number</div>
+  		    <textarea id="_number" placeholder="mobile number "></textarea>
+  	</div>
+  	<div id="song">
+  		    <div>favourite song?</div>
+  		    <textarea id="_song" placeholder="song title here"></textarea>
+  	</div>
+  	   <div class="submit" onclick="submit()">submit</div>
+  	</div>
+  </div>
+  <div id="footer">
+  	coded by Varaprasadh Alajangi.
+  </div>
+
+<script src="https://www.gstatic.com/firebasejs/4.12.1/firebase.js"></script>
+<script src="https://www.gstatic.com/firebasejs/4.12.1/firebase-database.js"></script>
+<script>
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyDHnzLdntVAA8Zl9-uhRUAZfMFTZQZ_Ktc",
+    authDomain: "first-firebase-ef987.firebaseapp.com",
+    databaseURL: "https://first-firebase-ef987.firebaseio.com",
+    projectId: "first-firebase-ef987",
+    storageBucket: "",
+    messagingSenderId: "701439350277"
+  };
+  firebase.initializeApp(config);
+</script>
+<script type="text/javascript" src="firebase.js"></script>
+</body>
+</html>
