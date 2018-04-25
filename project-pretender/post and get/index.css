@@ -1,0 +1,97 @@
+body{
+	margin:0px;
+	height: 100%;
+	border: 3px solid blue;
+
+}
+#header{
+	margin:0px;
+	width: 100%;
+	height:40%;
+	background:rgba(31, 58, 147,0.8);
+	padding:30px;
+	text-align: center;
+	font-weight: 30px;
+	font-family: times-roman;
+	font-size: 30px;
+	color:white;
+
+}
+span{
+	font-weight: 10px;
+	font-family:sans;
+	font-size: 30px;
+	margin: 20px;
+    color: rgba(219, 10, 91,0.9);
+}
+#name-box{
+	width:50%;
+	height:40px;
+	border: 3px solid red;
+}
+#post-box{
+	width:100%;
+	height:150px;
+	border: 10px solid rgba(75, 119, 190,0.8);
+	margin-top:10px;
+	margin-right: 10px;
+	box-shadow:5px 5px 3px rgb(108, 122, 137);
+}
+#submit{
+	margin:20px;
+	padding: 10px;
+	background: rgba(0,230,64,0.9);
+	width:30%;
+	height:50px;
+	margin-left: 40%;
+}
+#submit:hover{
+  background: rgba(38, 166, 91,0.9);
+	}
+
+#post-list{
+	list-style: none;
+	margin: 10px
+}
+#post-header{
+	left:10%;
+	padding:10px;
+	margin-top:10px;
+	color: rgba(31, 58, 147,0.9);
+    box-shadow:5px 0px 10px black;
+    font-weight:20px;
+    font-size: 20px;
+}
+.post-card{
+	width:70%;
+	height:auto;
+	box-shadow: 10px 10px 50px black;
+	padding-left: 30px;
+	margin:30px;
+}
+.posts{
+background:rgba(197, 239, 247,0.2);
+box-shadow: 10px 0px 30px gray;
+}
+.footer{
+	width: 100%;
+	height:100px;
+	background: rgb(34, 49, 63);
+	color: rgb(210, 215, 211);
+	text-align: center;
+	font-size: 30px;
+	font-family: times-roman;
+	font-weight: 30px;
+	padding-top:30px;
+}
+#name{
+	color:blue;
+	font-weight: 10px;
+	font-size: 30px;
+    font-family: 'Indie Flower', cursive;}
+
+
+#text{
+	font-size: 20px;
+	font-family: 'Abel', sans-serif;
+}

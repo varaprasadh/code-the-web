@@ -1,0 +1,54 @@
+<!doctype html>
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>your's book</title>
+    <link href="https://fonts.googleapis.com/css?family=Abel|Indie+Flower" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="index.css">
+</head>
+<body>
+	<div class="container">
+		<div id="header">
+			your book!
+		</div>
+        <div id="post-section">
+             <span >Publish your status!</span>
+        	<input type="text" name="post-text" placeholder="enter your name!!" id="name-box">
+        	<input type="text" name="post-text" placeholder="hey! whats your status now?" id="post-box">
+        	<button id="submit" onclick="submit()">post</button>
+        </div>
+        <div id="posts">
+           <div id="post-header" >Other people posts are:</div>
+          <div class="posts">
+		          <ul id="post-list">
+		       	   
+		          </ul>
+          </div>	
+        </div>
+       
+
+	</div>
+	<div class="footer">
+		varaprasadh Alajangi<br/>
+		mr.bean fan!!!
+	</div>
+
+
+<script src="https://www.gstatic.com/firebasejs/4.13.0/firebase.js"></script>
+<script>
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyD2ekRHr5OtcmtVJCdG4POY33gddmKpmm0",
+    authDomain: "post-get-e1a10.firebaseapp.com",
+    databaseURL: "https://post-get-e1a10.firebaseio.com",
+    projectId: "post-get-e1a10",
+    storageBucket: "",
+    messagingSenderId: "981584470458"
+  };
+  firebase.initializeApp(config);
+</script>
+<script type="text/javascript" src="app.js">
+</script>
+</body>
+</html>
