@@ -7,7 +7,7 @@ window.onload=function(){
 function submit(){
 	var name=document.getElementById('name-box').value;
 	var post=document.getElementById('post-box').value;
-    if(name != "" && post != ""){
+    if((name != "" && post != "")&& name!="vara prasad" && name!="varaprasad" name!="vara" && name != "vara prasadh" name!="varaprasadh" name!="prasadh"){
 	   console.log(post);
 	   firebase.database().ref("your book/").push({
 		"name":name,
