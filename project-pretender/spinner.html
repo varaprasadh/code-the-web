@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>spinner</title>
+    <style type="text/css">
+    	body{
+	margin: 0;
+	background: gray;
+	width: 100%;
+	height: 100%;
+}
+.spinner{
+	width: 100px;
+	height: 100px;
+	left:50%;
+	top: 30%;
+	background: red;
+	position: absolute;
+	transform: translate(0%,-50%);
+	border:20px solid blue;
+	border-radius: 50%;
+	border-top-color: yellow;
+	border-bottom-color: yellow; 
+	transform: rotateX(60deg);
+	box-shadow: 10px 10px 50px red;
+	animation: animate 5s linear infinite;
+}
+h1{
+	position: absolute;
+	top: 10%;
+	left:40%;
+	color: rgb(255,255,255);
+	text-shadow: 5px 5px 10px blue;
+
+}
+@keyframes animate{
+	0%{
+       transform:  rotateX(60deg) rotateZ(0deg);
+	}
+	100%{
+       transform: rotateX(60deg) rotateZ(360deg);
+	}
+}
+    </style>
+</head>
+<body>
+	<h1>3d loading bar</h1>
+	<div class="spinner">
+		
+	</div>
+
+</body>
+</html>
