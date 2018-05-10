@@ -5,3 +5,5 @@ on the way of becoming ${need_to_be_determined}.
 
 <hr/>
 i planned to cover all front end stuff with in this year.
+<hr/>
+made in india with <strong>love</strong>
