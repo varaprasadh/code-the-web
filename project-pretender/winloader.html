@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>winloader</title>
+	<style type="text/css">
+		*{
+			margin: 0;
+			padding: 0;
+
+		}
+		.container{
+		    position:relative;
+		    background-color: rgba(10,140,250,0.9);
+		    width: 100vw;
+		    height: 100vh;
+
+		}
+		.loader{
+			position:relative;
+			width:100px;
+			height: 100px;
+			left: 50%;
+			top:50%;
+		    transform: translate(-50%,-50%);
+			border-radius: 50%;
+		 }
+		
+		.bubbles{
+			position: absolute;
+			background:rgba(0,0,0,0);
+			width:100px;
+			height: 100px;
+			border-radius: 50%;
+        }
+        .bubbles::before{
+            position: absolute;
+			content:" ";
+			display: block;
+			width: 10px;
+			height:10px;
+			background-color: white;
+			border-radius:50%;
+			left: 50%;
+			transform: translate(-50%,-50%);
+						
+
+        }
+        .bub-1{
+           animation: spin 3s linear 0s infinite;
+        }
+       
+         .bub-2{
+           animation: spin 3s linear 0.2s infinite;
+        }
+        .bub-3{
+           animation: spin 3s linear 0.4s infinite;
+        } 
+        .bub-4{
+           animation: spin 3s linear 0.6s infinite;
+        }
+         .bub-5{
+           animation: spin 3s linear 0.8s infinite;
+        } 
+        .bub-6{
+           animation: spin 2s linear 1s infinite;
+        }
+       
+        
+
+
+
+
+		
+
+		@keyframes spin{
+			0% {
+				transform: rotate(0deg);
+			}
+			20%{
+				transform: rotate(200deg);
+	        }
+	        100%{
+				transform: rotate(360deg);
+			}
+        }
+	
+
+		 
+
+
+
+	</style>
+</head>
+<body>
+   <div class="container">
+     <div class="loader">
+     	<div class="bubbles bub-1"></div>
+     	<div class="bubbles bub-2"></div>
+     	<div class="bubbles bub-3"></div>
+     	<div class="bubbles bub-4"></div>
+     	<div class="bubbles bub-5"></div>
+     	<div class="bubbles bub-6"></div>
+     	
+     </div>   	
+   </div>
+</body>
+</html>
