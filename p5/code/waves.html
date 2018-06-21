@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>random walker</title>
+	<meta charset="utf-8">
+    <meta name="viewport" width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0>
+    <style> body {padding: 0; margin: 0;} </style>
+    <script src="../p5.min.js"></script>
+    <script src="../addons/p5.dom.min.js"></script>
+    <script src="../addons/p5.sound.min.js"></script>
+    <script type="text/javascript">
+        var sinpoints=[];
+        var cospoints=[];
+        function setup(){
+          createCanvas(500,500);
+          background(0);
+          angleMode(DEGREES);
+          for(var i=0;i<10;i++){
+            let sinps=new sinpoint(10+i*10,i*20+i*30);
+            let cosps=new cospoint(10+i*10,i+20);
+            sinpoints.push(sinps);
+            cospoints.push(cosps);
+        }
+      }
+        function draw(){
+          background(0);
+          grid();
+          for(var i=0;i<sinpoints.length;i++){
+            sinpoints[i].update();
+
+             sinpoints[i].draw();
+             fill(255);
+             text("sinwave", sinpoints[0].x,sinpoints[0].y+10);
+
+
+             if(sinpoints[i].x<0){
+               sinpoints.splice(i,1);
+               sinpoints.push(new sinpoint(500,0));
+             }
+            }
+          for(var i=0;i<cospoints.length;i++){
+             cospoints[i].update();
+             cospoints[i].draw();
+             fill(255,0,0);
+             text("coswave", cospoints[0].x,cospoints[0].y+10);
+             if(cospoints[i].x<0){
+               cospoints.splice(i,1);
+               cospoints.push(new cospoint(500,0));
+
+             }
+            }
+
+
+        }
+
+      var  sinpoint = function(x,angle){
+          this.angle=angle;
+          this.x=x;
+          this.y=0;
+          this.draw=function(){
+            fill(100,255,200);
+            ellipse(this.x,this.y,10);
+            stroke(30);
+          }
+          this.update=function(){
+            this.y= sin(this.angle);
+            this.y=map(this.y,0,1,200,300);
+            this.angle+=1;
+            this.x-=1;
+
+
+          }
+        }
+      var  cospoint = function(x,angle){
+          this.angle=angle;
+          this.x=x;
+          this.y=0;
+          this.draw=function(){
+            fill(100,255,200);
+            ellipse(this.x,this.y,10);
+
+          }
+          this.update=function(){
+            this.y= cos(this.angle);
+            this.y=map(this.y,0,1,350,450);
+            this.angle+=1;
+            this.x-=1;
+
+
+          }
+        }
+        function grid(){
+            fill(100,255,200);
+          for(var i=0;i<500;i+=50){
+            for(var c=0;c<500;c+=50){
+              strokeWeight(1);
+              stroke(100,100,100);
+              text(""+c,c,10);
+              text(""+c,c,460);
+              line(c,0,c,500);
+              text(""+i,0,i);
+              text(""+i,460,i);
+              line(0,i,500,i);
+              details();
+            }
+          }
+        }
+        function details(){
+          stroke(100,100,100);
+          text("angle:"+sinpoints[0].angle%360,100,50);
+          text("currentX:"+sinpoints[0].x,250,50);
+          text("currentY:"+ceil(sinpoints[0].y),250,70);
+
+        }
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>
