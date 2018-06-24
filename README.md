@@ -4,9 +4,9 @@ on the way of becoming ${need_to_be_determined}.
 #explore my codes.if anything found wrong.throw a issue.so i can modify.
 
 <hr/>
-i planned to cover all front end stuff with in this year.
+i planned to learn all front end stuff with in this year ie,2018.
 <hr/>
-made in india with <strong>love</strong>
+code in india with <strong>love</strong>
 <hr/>
 ###recommended_youtube_channels
 <hr/>
