@@ -1,0 +1,160 @@
+<html>
+<head>
+    <style>
+        .container{
+            display:flex;
+            justify-content: center;
+            align-items: center;
+            background: #123245;
+            height: 100vh;
+            flex-direction: column;
+            overflow: hidden;
+            
+        }
+        .rect{
+            display:flex;
+            justify-content: center;
+            align-items: center;
+            width:200px;
+            height: 200px;
+            border-radius: 50%;
+            border-bottom: 3px solid pink;
+            border-top: 3px solid pink;
+            animation: rotate 2s linear infinite;
+            
+        }
+        .circle{
+            display:flex;
+            justify-content: center;
+            align-items: center;
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            background: #fafabb;
+            animation: waver 0.5s  alternate infinite;
+        }
+        .dot{
+            width:25px;
+            height:25px;
+            border-radius:50%;
+            background: #342345;
+            animation: getbig 1s alternate ease infinite;
+        }
+
+        @keyframes getbig{
+            0%{
+                width:30px;
+                height:30px;
+                opacity: 1;
+            }
+            100%{
+               width: 50px;
+               height: 50px;
+                opacity: 1;
+            }
+        }
+        @keyframes waver{
+            0%{
+                width:50px;
+                height: 50px;
+                opacity: 1;
+            }
+            100%{
+                width:100px;
+                height:100px;
+                opacity: 0.2;
+            }
+        }
+        @keyframes rotate{
+            0%{
+                transform: rotate(0deg);
+                
+            }
+            100%{
+                transform: rotate(360deg);
+            }
+        }
+          @keyframes rotate_circle{
+            0%{
+                transform: rotate(0deg);
+                
+            }
+            100%{
+                transform: rotate(-360deg);
+            }
+        }
+        .progress{
+            margin-top: 15px;
+            width:200px;
+            height:20px;
+            background:rgba(150,170,100,0.7);
+            border-radius: 4px;
+            overflow: hidden;
+        }
+        .loadbar{
+            width:190px;
+            height: 0;
+            border-top: 20px solid red;
+            animation: load 3s linear infinite;
+        }
+        @keyframes load{
+            0%{
+              width:0px;
+            }
+            100%{
+                width: 200px;
+            }
+        }
+        .loadbar_2{
+            width:190px;
+            height: 0px;
+            border-top:20px dotted green;
+            animation: load 3s linear infinite;
+
+        }
+        .loadbar_3{
+            border-top: 20px dotted orange;
+            animation: load_3 2s linear backwards infinite;
+        }
+        @keyframes load_3{
+            0%{
+              margin-left: 0px;
+            }
+            
+            100%{
+             margin-left: 200px;
+            }
+        }
+        .footer{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: linear-gradient(to right bottom ,yellow,orange);
+        }
+        
+    </style>
+</head>
+<body>
+  <div class="container">
+    <div class="rect">
+        <div class="circle">
+           <div class="dot"></div>
+        </div>
+      </div>
+       <div class="progress">
+         <div class="loadbar"></div>
+       </div> 
+      <div class="progress">
+         <div class="loadbar_2"></div>
+       </div>
+       <div class="progress">
+         <div class="loadbar_2 loadbar_3"></div>
+       </div>
+      <div class="progress footer">
+       <div class="text"><code><> with Love by github!</code></div> 
+     </div>
+
+  </div>
+    </body>
+
+</html>
