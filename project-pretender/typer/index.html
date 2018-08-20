@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Typer</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+    <script type="text/javascript" src="app.js"></script>
+    <style>
+        #github {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            font-size: 50px;
+            font-weight: 30px;
+            color: teal;
+        }
+        
+        #code {
+            position: absolute;
+            background: rgba(100, 120, 230, 0.8);
+            padding: 10px;
+            color: rgb(4, 30, 51);
+            font-family: cursive;
+            font-size: 30px;
+            top: 80%;
+            left: 50%;
+            transform: translate(-50%, 0%);
+            border-radius: 10px;
+        }
+        
+        .typer {
+            color: sienna;
+            font-family: monospace;
+            font-size: 60px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>
+        <div id="github">Github</div>
+        <span class="typer" id="main" data-words="where programmers satisfies their ego's; :)-" data-delim=";" data-colors="red,blue" data-delay="100" data-deleteDelay="10">lets</span>
+        <span class="cursor" data-owner="main"></span>
+    </h1>
+    <p><code id="code"><> with love by github!</code></p>
+    <script src="typer.js"></script>
+</body>
+
+</html>
