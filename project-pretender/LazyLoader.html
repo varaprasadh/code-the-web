@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+    <meta charset="utf-8">
+    <title>Lazy Loader</title>
+    <style>
+        body {
+            padding: 0;
+            margin: 0;
+            overflow: hidden;
+        }
+        
+        .wrapper {
+            background: rgb(0, 0, 0);
+            height: 100vh;
+            width: 100vw;
+        }
+        
+        #container {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            animation: rot 10s linear infinite forwards;
+        }
+        
+        svg {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%) rotate(-90deg);
+        }
+        
+        #loader {
+            stroke-dasharray: 400;
+            stroke: linear-gradient(#ff0084, #00c300);
+            stroke-dashoffset: 400;
+            animation: load 1.5s linear infinite;
+        }
+        
+        @keyframes load {
+            0% {
+                stroke-dashoffset: 400;
+            }
+            100% {
+                stroke-dashoffset: -300;
+            }
+        }
+        
+        @keyframes rot {
+            0% {
+                transform: rotate(0deg);
+            }
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="wrapper">
+        <div id="container">
+            <svg height="100" width="100">
+        <defs>
+          <linearGradient id="gradient" x1="0%" y1="0%" x2="0%" y2="100%">
+            <stop offset="0%" stop-color="#00bc9b" />
+            <stop offset="100%" stop-color="#5eaefd" />
+          </linearGradient>
+        </defs>
+        <circle id="loader" cx="50" cy="50" r="40" fill="none" stroke-width="10" stroke="url(#gradient)" />
+      </svg>
+        </div>
+
+    </div>
+
+
+</body>
+
+</html>
