@@ -1,14 +1,14 @@
-#intro:
-started with zero.
-on the way of becoming ${need_to_be_determined}.
-#explore my codes.if anything found wrong.throw a issue.so i can modify.
-
-<hr/>
-i planned to learn all front end stuff with in this year ie,2018.
-<hr/>
-code in india with <strong>love</strong>
-<hr/>
-###recommended_youtube_channels
-<hr/>
-<a href="https://www.youtube.com/channel/UCvjgXvBlbQiydffZU7m1_aw">coding train</a>
-<p>for awesome tutorials :<a href="https://www.youtube.com/channel/UC7pVho4O31FyfQsZdXWejEw">code grid</a></p>
+# this week
+ ----------
+  **todo list**
+   - video chat app ```today goal```
+   - chatter 
+   -  - gui version
+   -  - chatter with file upload version
+   - media streamer v0.0.1
+   - react portfolio like app
+   -  - it may include users they can create accout and access the page
+   -  - search for a book or images and download
+   - mini project
+   - android 
+## do that above tasks
