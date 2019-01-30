@@ -1,0 +1,77 @@
+        html,
+        body {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            width: 100vw;
+            height: 100%;
+            flex-direction: column;
+            overflow-x: hidden;
+        }
+        
+        .slider-wrapper {
+            position: relative;
+            margin: 200px auto;
+            max-width: 226px;
+            transform: translateX(-100px);
+        }
+        
+        .slider-wrapper::after {
+            display: block;
+            content: '';
+            width: 200px;
+            height: 200px;
+            position: absolute;
+            top: 0%;
+            left: 0%;
+            outline: 5px solid red;
+        }
+        
+        .slider-holder {
+            position: absolute;
+            display: flex;
+            height: 200px;
+            transition: transform 1s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+        
+        .card {
+            min-width: 200px;
+            flex: 1;
+            font-size: 2em;
+            color: rgb(54, 150, 150);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transform: scale(0.7);
+            background: rgb(29, 29, 29);
+            opacity: 0.7;
+            transition: transform 1s cubic-bezier(0.075, 0.82, 0.165, 1), opacity 1s linear, font-size 1s cubic-bezier(0.075, 0.82, 0.165, 1);
+            border: 1px solid blue;
+        }
+        
+        .controls {
+            display: flex;
+            border: 2px solid blueviolet;
+            height: 100px;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .controls>div {
+            flex: 1;
+            min-width: 200px;
+            height: 100px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 3px solid sienna;
+            font-family: 'Trebuchet MS';
+            font-size: 2em;
+            font-weight: 1em;
+        }
+        
+        .active {
+            transform: scale(1);
+            font-size: 3em;
+            opacity: 1;
+        }
