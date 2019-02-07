@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>clock</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+        }
+        
+        #body {
+            width: 100%;
+            height: 100%;
+            background-size: cover;
+        }
+        
+        #time {
+            position: absolute;
+            top: 80%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            padding: 20px;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            font-size: 50px;
+            font-weight: 30px;
+            color: lightgreen;
+            z-index: 999;
+        }
+        
+        #hour,
+        #min,
+        #sec {
+            margin: 10px;
+            padding: 3px 5px;
+            background: rgb(22, 84, 119);
+            color: white;
+            border-radius: 20px;
+        }
+        
+        @media screen and (max-width:768px) {
+            #time {
+                position: absolute;
+                left: 50%;
+                top: 70%;
+                height: 10vh;
+                transform: translate(-50%, -50%);
+            }
+            #time>span {
+                margin: 0 3px;
+            }
+            #hour,
+            #min,
+            #sec {
+                padding: 2px 3px;
+                background: rgb(22, 84, 119);
+                color: white;
+                border-radius: 20px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <canvas id="canvas">
+
+    </canvas>
+    <div id="time">
+    </div>
+
+</body>
+<script type="text/javascript">
+    var clock;
+    window.onload = () => {
+        var canvas = document.getElementById('canvas');
+        var timer = document.getElementById('time');
+        w = window.innerWidth;
+        h = window.innerHeight;
+        canvas.width = w;
+        canvas.height = h;
+
+        var ctx = canvas.getContext('2d');
+
+        function init() {
+            ctx.fillStyle = 'black';
+            ctx.fillRect(0, 0, w, h);
+            ctx.fill();
+            //ctx.rotate(90)
+
+        }
+
+        var clock = function() {
+            var hours, minutes, seconds;
+            this.update = () => {
+                var d = new Date();
+                // this.hours = d.getHours() % 12;
+                this.hours = 1;
+                this.minutes = d.getMinutes();
+                this.seconds = d.getSeconds();
+                var mod_min = this.minutes < 10 ? ('0' + this.minutes) : this.minutes;
+                var mod_sec = this.seconds < 10 ? ('0' + this.seconds) : this.seconds;
+                var mod_hour = this.hours < 10 ? ('0' + this.hours) : this.hours;
+                timer.innerHTML = ` <span id='hour'>${mod_hour}</span><span id="min">${mod_min}</span><span id="sec">${mod_sec}</span>`;
+
+            }
+            this.draw = function() {
+
+
+                //hours 
+                ctx.save();
+                ctx.strokeStyle = "#ff00ff";
+                ctx.lineWidth = 5;
+                ctx.translate(w / 2, h / 2);
+                ctx.beginPath();
+                ctx.moveTo(0, 0);
+                ctx.rotate(-90 * (Math.PI / 180));
+                // var angle = (this.hours * 60 + this.minutes * 60 + this.seconds);
+                // var day = 24 * 60 * 60 * 60;
+                // var a = (360 / day) * angle * (Math.PI / 180);
+
+                var a = (this.hours * Math.PI / 6) +
+                    (this.minutes * Math.PI / (6 * 60)) +
+                    (this.seconds * Math.PI / (360 * 60));
+                ctx.rotate(a);
+                ctx.lineTo(100, 0);
+                ctx.stroke();
+                ctx.restore();
+                //minutes
+                ctx.save();
+                ctx.strokeStyle = "#ffff00";
+                ctx.lineWidth = 5;
+                ctx.beginPath();
+                ctx.translate(w / 2, h / 2);
+                ctx.moveTo(0, 0);
+                // var angle = (this.minutes * 60 + this.seconds);
+                // var day = 60 * 60;
+                // var a = (360 / day) * angle * (Math.PI / 180);
+                var a = (this.minutes * Math.PI / 30) + (this.seconds * Math.PI / (30 * 60));
+                ctx.rotate(-90 * (Math.PI / 180));
+                ctx.rotate(a);
+                ctx.lineTo(200, 0);
+                ctx.stroke();
+                ctx.restore();
+                //seconds
+                ctx.save();
+                ctx.strokeStyle = "#00ffff";
+                ctx.beginPath();
+                ctx.lineWidth = 5;
+                ctx.translate(w / 2, h / 2);
+                ctx.moveTo(0, 0);
+                ctx.rotate(-90 * (Math.PI / 180));
+                // var angle = (this.seconds);
+                // var day = 60;
+                // var a = (360 / day) * angle * (Math.PI / 180);
+                var a = (this.seconds * Math.PI / 30);
+                ctx.rotate(a);
+                ctx.lineTo(300, 0);
+                ctx.stroke();
+                ctx.restore();
+
+
+            }
+        }
+        window.clock = new clock();
+        // window.clock = clock;
+
+        function animate() {
+            ctx.clearRect(0, 0, w, h);
+            init();
+            window.clock.update()
+            window.clock.draw();
+            window.requestAnimationFrame(animate)
+        }
+        animate();
+
+    }
+
+    /*
+                 init();
+
+                ctx.lineWidth = 10;
+                var start = -Math.PI / 2;
+                var end = Math.PI * 2;
+                //
+                ctx.beginPath();
+                ctx.strokeStyle = '#FF00FF	';
+                ctx.save()
+                ctx.rotate(0);
+                ctx.moveTo(w / 2, h / 2);
+
+                console.log("hours" + (end / 12) * this.hours + start);
+                ctx.lineTo(100, 0);
+                ctx.stroke();
+                ctx.restore();
+
+                //minutes hand
+                ctx.beginPath();
+                ctx.strokeStyle = '#00ffff';
+                ctx.save();
+                ctx.moveTo(w / 2, h / 2);
+                ctx.rotate(0);
+                ctx.lineTo(150, 0)
+                ctx.stroke();
+                ctx.restore();
+
+                //seconds hand
+                ctx.beginPath();
+                ctx.strokeStyle = '#ffff00';
+                ctx.save();
+                ctx.moveTo(w / 2, h / 2);
+                // var second_angle = (end / 60) * this.seconds + start;
+
+                console.log(second_angle);
+                ctx.rotate(0);
+                ctx.lineTo(100, 0);
+                ctx.stroke();
+                ctx.restore();
+    */
+</script>
+
+</html>
