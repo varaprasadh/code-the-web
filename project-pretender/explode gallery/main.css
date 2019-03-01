@@ -1,0 +1,46 @@
+html,
+body {
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    background: rgb(5, 5, 15);
+}
+
+.initwrapper {
+    height: 300px;
+}
+
+.imgstack {
+    position: relative;
+    height: 100%;
+}
+
+.imgstack img {
+    position: absolute;
+    z-index: 10;
+    left: 50%;
+    filter: drop-shadow(2px 2px 3px rgb(115, 0, 150));
+    transform: translate(-50%);
+    transition: all 1s cubic-bezier(0.785, 0.135, 0.15, 0.86);
+}
+
+.title {
+    color: white;
+    font-size: 3em;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.grid {
+    position: relative;
+    display: grid;
+    grid-template-columns: repeat( auto-fit, minmax(250px, 1fr));
+    grid-gap: 20px;
+}
+
+.grid .img {
+    height: 250px;
+}
