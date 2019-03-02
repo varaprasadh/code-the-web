@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Pubg Tournament</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="./js/main.js"></script>
+    <script src="./js/validator.js"></script>
+    <script src="./js/config/firebase/firebaseHandler.js" defer></script>
+    <link rel="shortcut icon" href="./icon.png" type="image/x-icon">
+    <link rel="stylesheet" href="./css/index.css">
+</head>
+
+<body>
+    <template class="load-template">
+          <div class="model-container">
+              <div class="loader">
+                  loading....
+              </div>
+          </div>
+    </template>
+    <template class="barcode-model">
+          <div class="model-container">
+              <div class="model">
+                 <div class="card cardcopy">copy upi id</div>
+                 <div class="model-code"></div>
+                <div class="close">X</div>
+              </div>  
+          </div>
+     </template>
+    <template class="teamentry">
+           <div class="model-container">
+               <div class="entryform">
+                   <input type="text" class="p p1" placeholder="enter player1 gamer name">
+                   <input type="text" class="p p2" placeholder="enter player2 gamer name">
+                   <input type="text" class="p p3" placeholder="enter player3 gamer name">
+                   <div class="controls">
+                       <div class="cancel">Cancel</div>
+                       <div class="tsubmit">submit</div>
+                   </div>
+               </div>
+           </div>
+     </template>
+    <nav class="navigation">
+        <div><a href="#register">Register</a></div>
+        <div><a href="#insta">Instructions</a></div>
+        <div><a href="#contact">Contact</a></div>
+    </nav>
+    <div class="container">
+        <div class="landingpage">
+            <div class="title"><img src="./pubgpics/pubg_PNG33.png" alt=""></div>
+            <div class="register-btn"><a href="#register">Register</a></div>
+            <div class="map">Erangel</div>
+            <div class="lastday">Register before <br/><span class="yellow">23-02-2019</span></div>
+            <div class="fee">
+                <div>entry fee:</div>
+                <p><span class="kill">200 INR </span>per Squad and <span class="kill"> 50 INR </span>for individual.</p>
+            </div>
+        </div>
+        <div class="details">
+            <a name="insta">Instructions</a>
+            <div class="instructions">
+                <div>Instructions:</div>
+                <ul>
+                    <li>
+                        <p>Tournment will be conducted on <span class="kill">23/02/19 at 7.30 PM</span></p>
+                    </li>
+                    <li>
+                        <p>you can come up with your team,or join inidvidual,after that we ll put you in random squad.</p>
+                    </li>
+                    <li>
+                        <p>entry fee will be <span class="kill"> 200 INR </span>per squad and <span class="kill"> 50 INR </span>for individuals</p>
+                    </li>
+                    <li>
+                        <p>payment should be done by upi,barcodes are provided,after payment screenshot should be uploaded.</p>
+                    </li>
+                    <li>
+
+                        <p>enter your unique gamer name ,mobile number</p>
+                    </li>
+                    <li>
+                        <p>if you are coming with team,add your teammate names!</p>
+                    </li>
+                    <li>
+                        <p>after registration,we will add you in official whatsapp group within 2 hours</p>
+                    </li>
+                </ul>
+            </div>
+            <div class="note">
+                <p>
+                    you will be playing trail matches, and one and only one final match which will be in Erangel.
+                </p>
+            </div>
+        </div>
+        <div class="register">
+            <a name="register" class="emptyspace"></a>
+            <div class="register-wrapper">
+                <div class="whitespace"></div>
+                <marquee direction="left">click <span class="marq-bcode">Barcodes</span> to maximize.you can copy upi id from there if you wish to</marquee>
+                <div class="barcodetab">
+                    <div class="codecard phonepay" data-upi_id="9515703635@paytm">
+                        <div class="b-code"><img src="./assets/phonepay.jpeg" alt=""></div>
+                        <div class="barrer">Phonepay</div>
+                        <div class="upi-id">9515703635@ybl</div>
+                    </div>
+                    <div class=" codecard paytm" data-upi_id="9515703635@paytm">
+                        <div class="b-code"><img src="./assets//paytm.jpeg" alt=""></div>
+                        <div class="barrer">Paytm</div>
+                        <div class="upi-id">9515703635@paytm</div>
+                    </div>
+                </div>
+                <div class="form">
+                    <input type="text" placeholder="your Name.." class="pname">
+                    <input type="text" placeholder="your gamerId.." class="pid">
+                    <input type="text" placeholder="Mobile Number.." class="pmobile">
+                    <div class="file">
+                        <input type="file" accept="image/*" name="screenshot" id="screenshot">
+                        <label for="screenshot">upload screenshot</label>
+                    </div>
+                    <input type="button" value="if you are coming with team click here!" class="teammates">
+                    <button class="submit">submit</button>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="prize">
+            <div class="wrapper">
+                <div class="card prizeheader">Prizemoney</div>
+                <div class="card firstprize">
+                    <div>winner winner chicken dinner</div>
+                    winners will get <span class="prizemoney">1000 INR.</span> prizemoney!
+                </div>
+                <div class="card secondprize">
+                    remaining players will get <br/><span class="prizemoney">20 INR</span> per <span class="kill">kill</span>.
+                </div>
+                <div class=" card note">
+                    <span class="kill">Note:</span>Winners will not get any extra money for kills.
+                </div>
+
+            </div>
+        </div>
+        <div class="contact">
+            <a name="contact"></a>
+            <div class="contact-wrapper">
+                <div class="header">for more details contact:</div>
+                <div class="contact-card">
+                    <img src="./assets/kumar2.jpeg" alt="pic">
+                    <div class="name">KumarReddy</div>
+                    <div class="number">9515703635</div>
+                    <div class="number">8106492369</div>
+                    <div class="social">
+                        <!-- class="fb" class="wa"-->
+                        <a class=" fb" href="https://www.facebook.com/kumar.neelapu.37">
+
+                        </a>
+                        <a class=" wa" href="https://wa.me/919515703635">
+
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="contact-card dev">
+            wilson@2k19
+        </div>
+    </div>
+    <div class="disabled">
+        <div>you better open in mobile!</div>
+    </div>
+    <script src="https://www.gstatic.com/firebasejs/5.8.3/firebase.js"></script>
+    <script src="./js/config/firebase/fireConfig.js"></script>
+</body>
+
+</html>
